@@ -1,3 +1,5 @@
+The bot provides a simple economic system that can be used on discord servers. You can earn coins by chatting or fishing. You can get ingots in the mine and craft items from them.
+
 # **Installation**
 
 **Download these things first:**
@@ -27,6 +29,10 @@ Open main.py via text redactor or python IDLE. Change logs_channel_id, bot_id an
 items - contains all in-game items(used for /additem, /removeitem, /senditem)
 
 shopitems - contains items which are availible in the shop, format ID|item|price
+
+crafts - craft recipes, format item: copper|iron|gold|platinum|titanium
+
+craftitems - items which can be crafted
 
 coin_boosts - how much coins to add per message if user has this coin, format coin: amount
 
@@ -58,9 +64,11 @@ slot_cost - integer - additional inventory slot price
 
 slot_cost_increase - integer - increase price per each level(now using 1000 * 1.2 ** lvl formula, change line 558 if you want)
 
-claim_coins - integer - how much coins per claim
+claim_coins - integer - how much coins per fishing
 
-claim_interval - integer - claiming interval(in seconds)
+claim_interval - integer - fishing interval(in seconds)
+
+mine_interval - integer - mining interval(in seconds)
 
 How to change max slots limit if I already have a filled database? Use this SQL command:
 
@@ -99,7 +107,13 @@ to get your item back just buy it from market, you will be charged 0 coins
 
 /senditem <user> - transfering items
 
-/claim - claim coins(you have to buy a pickaxe first)
+/fish - fish to get coins(fishing rod is required)
+
+/mine - mine to get ingots(pickaxe is required)
+
+/craftbook - opens craftbook
+
+/craft <item> - craft an item
 
 /lbmoney <page> and /lbmessages <page> - checking leaderboard
 
